@@ -40,7 +40,7 @@ export default function HeatMapPage() {
           </div>
           <span className="badge badge-demo text-[0.65rem] flex items-center gap-1.5">
             <Sparkles className="w-3 h-3 text-accent-400" />
-            Mapbox WebGL
+            Geospatial Heatmap Engine
           </span>
         </div>
       </header>
@@ -140,7 +140,7 @@ export default function HeatMapPage() {
           <div className="glass-card p-5">
             <h4 className="text-xs font-bold text-text-primary mb-2">Palette Integration</h4>
             <p className="text-xs text-text-muted leading-relaxed">
-              The heat map uses the custom NERV crimson palette: transitioning from deep mahogany (<code className="text-accent-400">#4D121B</code>) through burgundy (<code className="text-accent-400">#751C2A</code>) and wine (<code className="text-accent-400">#9E2638</code>), culminating in saturated crimson (<code className="text-accent-400">#EA3852</code>) at critical bust probability nodes.
+              The heat map uses the calibrated NERV risk palette: transitioning from low risk emerald (<code className="text-emerald-500">#22c55e</code>) through amber (<code className="text-amber-500">#eab308</code>) and orange (<code className="text-orange-500">#f97316</code>), culminating in saturated crimson (<code className="text-accent-400">#EA3852</code>) and glowing white-hot cores at critical bust probability nodes.
             </p>
           </div>
         </div>

@@ -80,6 +80,25 @@ export const SEASONS = [
 export type Region = typeof REGIONS[number];
 export type Season = typeof SEASONS[number];
 
+export const REGION_COORDINATES: Record<string, { lng: number; lat: number; name: string; isGateway?: boolean }> = {
+  'Kerala': { lng: 76.27, lat: 10.85, name: 'Kerala' },
+  'Konkan & Goa': { lng: 73.82, lat: 15.30, name: 'Konkan & Goa' },
+  'Coastal Karnataka': { lng: 74.86, lat: 13.34, name: 'Coastal Karnataka' },
+  'Madhya Maharashtra': { lng: 74.12, lat: 18.52, name: 'Madhya Maharashtra' },
+  'Gujarat Region': { lng: 71.19, lat: 22.26, name: 'Gujarat Region' },
+  'East Rajasthan': { lng: 75.79, lat: 26.91, name: 'East Rajasthan' },
+  'West Madhya Pradesh': { lng: 76.85, lat: 23.25, name: 'West Madhya Pradesh' },
+  'Odisha': { lng: 85.82, lat: 20.95, name: 'Odisha' },
+  'Gangetic West Bengal': { lng: 88.36, lat: 22.57, name: 'Gangetic West Bengal' },
+  'Assam & Meghalaya': { lng: 91.74, lat: 25.58, name: 'Assam & Meghalaya' },
+  'Western Himalayas': { lng: 78.03, lat: 30.32, name: 'Western Himalayas' },
+  'Vidarbha': { lng: 79.09, lat: 21.15, name: 'Vidarbha' },
+  'Arabian Sea Convective Node': { lng: 69.2, lat: 14.8, name: 'Arabian Sea Convective Node', isGateway: true },
+  'Bay of Bengal Depression Track': { lng: 88.5, lat: 17.2, name: 'Bay of Bengal Depression Track', isGateway: true },
+  'Andaman Marine Trough': { lng: 93.2, lat: 11.5, name: 'Andaman Marine Trough', isGateway: true },
+  'Equatorial Moisture Inflow': { lng: 76.5, lat: 4.5, name: 'Equatorial Moisture Inflow', isGateway: true },
+};
+
 // Deterministic seed-based pseudo-random for consistent demo results
 function seededRandom(seed: number): number {
   const x = Math.sin(seed * 9301 + 49297) * 233280;

@@ -64,7 +64,35 @@
    Theme Root Variables & Overrides
    ======================================== */
 
-:root {
+:root, [data-theme="light"], .light {
+  --color-nerv-950: #fff5f6; /* Soft porcelain rose-white base */
+  --color-nerv-900: #fcedf0; /* Crisp container background */
+  --color-nerv-850: #f9dbe1; /* Surface tint */
+  --color-nerv-800: #f3c7d0;
+  --color-nerv-750: #e8aab5;
+  --color-nerv-700: #d37e8e;
+  --color-nerv-650: #9E2638; /* Wine */
+  --color-nerv-600: #892131;
+  --color-nerv-550: #751C2A; /* Deep burgundy */
+  --color-nerv-500: #4D121B; /* Dark cherry */
+  --color-nerv-450: #C73046;
+  --color-nerv-400: #EA3852;
+  --color-nerv-300: #EA3852;
+  --color-nerv-200: #C73046;
+  --color-nerv-100: #751C2A;
+  --color-nerv-50:  #140407;
+
+  --color-text-primary: #1f080c; /* High contrast deep readable wine black */
+  --color-text-secondary: #751C2A; /* Deep burgundy */
+  --color-text-muted: #8a3f4c; /* Muted rose */
+
+  --color-surface-primary: #ffffff;
+  --color-surface-card: rgba(255, 255, 255, 0.94);
+  --color-surface-card-hover: rgba(255, 245, 246, 0.98);
+}
+
+/* Dark Crimson / Burgundy / Dark Obsidian Theme */
+[data-theme="dark"], .dark {
   --color-nerv-950: #120406;
   --color-nerv-900: #1c060a;
   --color-nerv-850: #290a10;
@@ -86,35 +114,9 @@
   --color-text-secondary: #f4aab5;
   --color-text-muted: #9e646e;
 
+  --color-surface-primary: #1c060a;
   --color-surface-card: rgba(41, 10, 16, 0.78);
   --color-surface-card-hover: rgba(77, 18, 27, 0.88);
-}
-
-/* Light Theme Variables — Preserving Crimson/Burgundy Brand Identity */
-[data-theme="light"], .light {
-  --color-nerv-950: #fff5f6; /* Soft porcelain rose-white base */
-  --color-nerv-900: #fcedf0; /* Crisp container background */
-  --color-nerv-850: #f9dbe1; /* Surface tint */
-  --color-nerv-800: #f3c7d0;
-  --color-nerv-750: #e8aab5;
-  --color-nerv-700: #d37e8e;
-  --color-nerv-650: #9E2638; /* Wine */
-  --color-nerv-600: #892131;
-  --color-nerv-550: #751C2A; /* Deep burgundy */
-  --color-nerv-500: #4D121B; /* Dark cherry */
-  --color-nerv-450: #C73046;
-  --color-nerv-400: #EA3852;
-  --color-nerv-300: #EA3852;
-  --color-nerv-200: #C73046;
-  --color-nerv-100: #751C2A;
-  --color-nerv-50:  #140407;
-
-  --color-text-primary: #2b060d; /* High contrast deep wine black */
-  --color-text-secondary: #751C2A; /* Deep burgundy */
-  --color-text-muted: #9e4653; /* Muted rose */
-
-  --color-surface-card: rgba(255, 255, 255, 0.92);
-  --color-surface-card-hover: rgba(255, 245, 246, 0.98);
 }
 
 /* ========================================

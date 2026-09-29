@@ -336,7 +336,7 @@ export default function Dashboard() {
                     }`}
                   >
                     <Flame className="w-3.5 h-3.5 text-accent-400" />
-                    Geospatial Heat Map
+                    Bust Risk Heat Map
                   </button>
                 </div>
               </div>
