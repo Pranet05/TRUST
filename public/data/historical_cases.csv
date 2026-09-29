@@ -1,0 +1,11 @@
+region,date,season,lead_day,forecast_rainfall,actual_rainfall,absolute_error,bust_label,event_bust,similarity_features
+Kerala,2018-08-16,Monsoon,3,82,214,132,TRUE,TRUE,"ens_spread=52;pw=62;cape=2100"
+Kerala,2019-07-22,Monsoon,3,68,142,74,TRUE,TRUE,"ens_spread=39;pw=55;cape=1750"
+Konkan & Goa,2020-09-03,Monsoon,4,105,87,18,FALSE,FALSE,"ens_spread=35;pw=49;cape=1400"
+Assam & Meghalaya,2020-06-18,Monsoon,5,120,185,65,TRUE,TRUE,"ens_spread=58;pw=64;cape=2400"
+Odisha,2021-08-11,Monsoon,3,55,48,7,FALSE,FALSE,"ens_spread=24;pw=42;cape=1050"
+Kerala,2017-08-11,Monsoon,4,72,158,86,TRUE,TRUE,"ens_spread=45;pw=57;cape=1900"
+Konkan & Goa,2021-06-28,Monsoon,2,88,165,77,TRUE,TRUE,"ens_spread=42;pw=53;cape=1650"
+Madhya Maharashtra,2019-07-15,Monsoon,3,45,52,7,FALSE,FALSE,"ens_spread=20;pw=39;cape=1050"
+Assam & Meghalaya,2019-09-01,Monsoon,3,95,148,53,TRUE,TRUE,"ens_spread=48;pw=60;cape=2200"
+West Madhya Pradesh,2020-07-09,Monsoon,5,32,28,4,FALSE,FALSE,"ens_spread=16;pw=35;cape=850"
