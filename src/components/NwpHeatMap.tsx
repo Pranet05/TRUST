@@ -96,8 +96,11 @@ export default function NwpHeatMap({
   // Setup heatmap + station layers on the Mapbox map
   const setupLayers = useCallback((mapInstance: mapboxgl.Map, dark: boolean, data: any) => {
     // Add or update source
-    if (!mapInstance.getSource('nwp-points')) {
+    const existingSource = mapInstance.getSource('nwp-points') as mapboxgl.GeoJSONSource | undefined;
+    if (!existingSource) {
       mapInstance.addSource('nwp-points', { type: 'geojson', data });
+    } else {
+      existingSource.setData(data);
     }
 
     // Heatmap layer — multi-stop risk gradient
@@ -252,30 +255,40 @@ export default function NwpHeatMap({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Update map style when theme changes
+  const geojsonRef = useRef(geojsonData);
+  geojsonRef.current = geojsonData;
+
+  const currentThemeRef = useRef(theme);
+
+  // Update map style ONLY when theme actually changes
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
+    if (currentThemeRef.current === theme) return;
+    currentThemeRef.current = theme;
+
     const dark = theme === 'dark';
     const targetStyle = dark ? 'mapbox://styles/mapbox/dark-v11' : 'mapbox://styles/mapbox/light-v11';
 
     const onStyleLoad = () => {
       if (map.current) {
-        setupLayers(map.current, dark, geojsonData);
+        setupLayers(map.current, dark, geojsonRef.current);
       }
     };
 
     map.current.once('style.load', onStyleLoad);
     map.current.setStyle(targetStyle);
-  }, [theme, setupLayers, geojsonData, mapLoaded]);
+  }, [theme, setupLayers, mapLoaded]);
 
-  // Update GeoJSON source when data changes
+  // Update GeoJSON source when data changes (e.g. Lead Day or Metric modes)
   useEffect(() => {
     if (!map.current || !mapLoaded) return;
-    const source = map.current.getSource('nwp-points') as mapboxgl.GeoJSONSource;
+    const source = map.current.getSource('nwp-points') as mapboxgl.GeoJSONSource | undefined;
     if (source) {
       source.setData(geojsonData);
+    } else {
+      setupLayers(map.current, theme === 'dark', geojsonData);
     }
-  }, [geojsonData, mapLoaded]);
+  }, [geojsonData, mapLoaded, setupLayers, theme]);
 
   // Toggle station layer visibility
   useEffect(() => {
